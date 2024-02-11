@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Loan_Management_System_API_Task.props" />
+</Project>
