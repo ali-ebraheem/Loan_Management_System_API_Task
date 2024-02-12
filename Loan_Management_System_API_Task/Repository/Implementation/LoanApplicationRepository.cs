@@ -4,35 +4,42 @@ using Loan_Management_System_API_Task.Repository.Interface;
 
 namespace Loan_Management_System_API_Task.Repository.Implementation;
 
-public class LoanApplicationRepository(DataContext context): ILoanApplicationRepository
+public class LoanApplicationRepository(DataContext context) : ILoanApplicationRepository
 {
     public ICollection<LoanApplication> GetLoanApplications()
     {
-        throw new NotImplementedException();
+        return context.LoanApplications.ToList();
     }
 
     public LoanApplication GetLoanApplication(int id)
     {
-        throw new NotImplementedException();
+        return context.LoanApplications.FirstOrDefault(la => la.Id == id)!;
     }
 
     public bool AddLoanApplication(LoanApplication loanApplication)
     {
-        throw new NotImplementedException();
+        context.LoanApplications.Add(loanApplication);
+        return Save();
     }
 
     public bool UpdateLoanApplication(LoanApplication loanApplication)
     {
-        throw new NotImplementedException();
+        context.LoanApplications.Update(loanApplication);
+        return Save();
     }
 
     public bool DeleteLoanApplication(int id)
     {
-        throw new NotImplementedException();
+        var loanApplication = context.LoanApplications.FirstOrDefault(la => la.Id == id);
+
+        context.LoanApplications.Remove(loanApplication);
+        return Save();
     }
+
 
     public bool Save()
     {
-        throw new NotImplementedException();
+        var save = context.SaveChanges();
+        return save > 0;
     }
 }

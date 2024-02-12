@@ -8,31 +8,36 @@ public class LoanRepaymentRepository(DataContext context): ILoanRepaymentReposit
 {
     public ICollection<LoanRepayment> GetAllLoanRepayments()
     {
-        throw new NotImplementedException();
+        return context.LoanRepayments.ToList();
     }
 
     public LoanRepayment GetLoanRepaymentById(int id)
     {
-        throw new NotImplementedException();
+        return context.LoanRepayments.FirstOrDefault(l => l.Id == id)!;
     }
 
     public bool AddLoanRepayment(LoanRepayment loanRepayment)
     {
-        throw new NotImplementedException();
+        context.LoanRepayments.Add(loanRepayment);
+        return Save();
     }
 
     public bool UpdateLoanRepayment(LoanRepayment loanRepayment)
     {
-        throw new NotImplementedException();
+        context.LoanRepayments.Update(loanRepayment);
+        return Save();
     }
 
     public bool DeleteLoanRepayment(int id)
     {
-        throw new NotImplementedException();
+        var loanRepayment = context.LoanRepayments.FirstOrDefault(l => l.Id == id)!;
+        context.LoanRepayments.Remove(loanRepayment);
+        return Save();
     }
 
     public bool Save()
     {
-        throw new NotImplementedException();
+        var save = context.SaveChanges();
+        return save > 0;
     }
 }

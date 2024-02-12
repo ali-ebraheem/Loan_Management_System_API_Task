@@ -4,35 +4,41 @@ using Loan_Management_System_API_Task.Repository.Interface;
 
 namespace Loan_Management_System_API_Task.Repository.Implementation;
 
-public class LoanApprovalRejectionRepository(DataContext context): ILoanApprovalRejectionRepository
+public class LoanApprovalRejectionRepository(DataContext context) : ILoanApprovalRejectionRepository
 {
     public ICollection<LoanApprovalRejection> GetAllLoanApprovalRejections()
     {
-        throw new NotImplementedException();
+        return context.LoanApprovalRejections.ToList();
     }
 
     public LoanApprovalRejection GetLoanApprovalRejectionById(int id)
     {
-        throw new NotImplementedException();
+        return context.LoanApprovalRejections.FirstOrDefault(l => l.Id == id)!;
     }
 
     public bool AddLoanApprovalRejection(LoanApprovalRejection loanApprovalRejection)
     {
-        throw new NotImplementedException();
+        context.LoanApprovalRejections.Add(loanApprovalRejection);
+        return Save();
     }
 
     public bool UpdateLoanApprovalRejection(LoanApprovalRejection loanApprovalRejection)
     {
-        throw new NotImplementedException();
+        context.LoanApprovalRejections.Update(loanApprovalRejection);
+        return Save();
     }
 
     public bool DeleteLoanApprovalRejection(int id)
     {
-        throw new NotImplementedException();
+        var loanApprovalRejection = context.LoanApprovalRejections.FirstOrDefault(l => l.Id == id);
+
+        context.LoanApprovalRejections.Remove(loanApprovalRejection);
+        return Save();
     }
 
     public bool Save()
     {
-        throw new NotImplementedException();
+        var save = context.SaveChanges();
+        return save > 0;
     }
 }

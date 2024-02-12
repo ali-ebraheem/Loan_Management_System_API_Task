@@ -8,31 +8,36 @@ public class UserRepository(DataContext context): IUserRepository
 {
     public ICollection<User> GetAllUsers()
     {
-        throw new NotImplementedException();
+        return context.Users.ToList();
     }
 
     public User GetUserById(int id)
     {
-        throw new NotImplementedException();
+        return context.Users.FirstOrDefault(u => u.Id == id)!;
     }
 
     public bool AddUser(User user)
     {
-        throw new NotImplementedException();
+        context.Users.Add(user);
+        return Save();
     }
 
     public bool UpdateUser(User user)
     {
-        throw new NotImplementedException();
+        context.Users.Update(user);
+        return Save();
     }
 
     public bool DeleteUser(int id)
     {
-        throw new NotImplementedException();
+        var user = context.Users.FirstOrDefault(u => u.Id == id)!;
+        context.Users.Remove(user);
+        return Save();
     }
 
     public bool Save()
     {
-        throw new NotImplementedException();
+        var save = context.SaveChanges();
+        return save > 0;
     }
 }
