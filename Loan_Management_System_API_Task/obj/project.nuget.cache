@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "KNvU8a17mK+tDH14LfmaU7voyrBDj5VDsXdEFxkJM3KfExHct0rwpujOEwak3o4q/1Odp4rUJRxmqNX38H2obg==",
+  "dgSpecHash": "7YvRN1LJxocsBEaHQyt70m1x/0jlT69y6iGnxZunANMEVv9Js1h8DEwFtiTYfuEpWPKdjDY8vWcJAwQANizIWw==",
   "success": true,
   "projectFilePath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj",
   "expectedPackageFiles": [
     "/Users/aliibraheem/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/aliibraheem/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
+    "/Users/aliibraheem/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.1/microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

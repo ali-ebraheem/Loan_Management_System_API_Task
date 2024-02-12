@@ -30,7 +30,7 @@ public class LoanApplicationRepository(DataContext context) : ILoanApplicationRe
 
     public bool DeleteLoanApplication(int id)
     {
-        var loanApplication = context.LoanApplications.FirstOrDefault(la => la.Id == id);
+        var loanApplication = context.LoanApplications.FirstOrDefault(la => la.Id == id)!;
 
         context.LoanApplications.Remove(loanApplication);
         return Save();
