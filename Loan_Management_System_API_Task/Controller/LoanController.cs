@@ -1,6 +1,5 @@
 using Loan_Management_System_API_Task.Commands;
 using Loan_Management_System_API_Task.Dto;
-using Loan_Management_System_API_Task.Models;
 using Loan_Management_System_API_Task.Queries;
 using Loan_Management_System_API_Task.Services;
 using MediatR;
@@ -27,6 +26,7 @@ public class LoanController(IMediator mediator,IMessageProducer messageProducer)
     }
 
     [HttpGet]
+    [Authorize]
     [ProducesResponseType(typeof(LoanDetailsDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetDetailsById([FromQuery] int id)
@@ -39,6 +39,7 @@ public class LoanController(IMediator mediator,IMessageProducer messageProducer)
     }
 
     [HttpPost]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult CreateApplication([FromBody] LoanApplicationDto loanApplicationDto)
@@ -55,6 +56,7 @@ public class LoanController(IMediator mediator,IMessageProducer messageProducer)
 
 
     [HttpPost]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult AddRepayment([FromBody] LoanRepaymentDto loanRepaymentDto)
