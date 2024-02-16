@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Loan_Management_System_API_Task.Dto;
 using Loan_Management_System_API_Task.Models;
@@ -29,8 +30,64 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
 
 
         var token = Generate(authenticateUser);
+
+        if (authenticateUser.RefreshToken!.Any(a => a.IsActive))
+        {
+            var userRefreshToken = authenticateUser.RefreshToken!.FirstOrDefault(a => a.IsActive);
+            SetRefreshTokenInCookie(userRefreshToken!.Token, userRefreshToken.Expires);
+            return Ok(token);
+        }
+
+
+        var refreshToken = GenerateRefreshToken();
+        authenticateUser.RefreshToken!.Add(refreshToken);
+        userRepository.UpdateUser(authenticateUser);
+        SetRefreshTokenInCookie(refreshToken.Token, refreshToken.Expires);
         return Ok(token);
     }
+
+    [AllowAnonymous]
+    [HttpPost]
+    public IActionResult RefreshToken()
+    {
+        var token = Request.Cookies["refreshToken"];
+        var user = userRepository.GetUserByRefreshToken(token!);
+        if (user is null)
+            return NotFound(token);
+        var refreshToken = user.RefreshToken!.FirstOrDefault(a => a.Token == token);
+        if (refreshToken is null)
+            return NotFound("refresh token is not found");
+        if (!refreshToken.IsActive)
+            return BadRequest("refresh token is expired");
+
+        refreshToken.Revoked = DateTime.UtcNow;
+        var newRefreshToken = GenerateRefreshToken();
+        user.RefreshToken!.Add(newRefreshToken);
+        userRepository.UpdateUser(user);
+        SetRefreshTokenInCookie(newRefreshToken.Token, newRefreshToken.Expires);
+        var newToken = Generate(user);
+        return Ok(newToken);
+    }
+
+    [HttpPost]
+    public IActionResult RevokeToken()
+    {
+        var token = Request.Cookies["refreshToken"];
+        var user = userRepository.GetUserByRefreshToken(token!);
+        if (user is null)
+            return NotFound(token);
+        var refreshToken = user.RefreshToken!.FirstOrDefault(a => a.Token == token);
+        if (refreshToken is null)
+            return NotFound("refresh token is not found");
+
+        if (!refreshToken.IsActive)
+            return BadRequest("refresh token is expired");
+
+        refreshToken.Revoked = DateTime.UtcNow;
+        userRepository.UpdateUser(user);
+        return Ok("refresh token is revoked");
+    }
+
 
     private string Generate(User user)
     {
@@ -45,7 +102,7 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
         var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
             configuration["Jwt:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(20),
+            expires: DateTime.Now.AddMinutes(1),
             signingCredentials: credentials
         );
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -56,5 +113,35 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
         var user = userRepository.UserAuthentication(userLoginDto.Email, userLoginDto.Password);
 
         return user;
+    }
+
+    private static RefreshToken GenerateRefreshToken()
+    {
+        var randomNumber = new byte[32];
+
+        using var generator = new RNGCryptoServiceProvider();
+
+        generator.GetBytes(randomNumber);
+
+        return new RefreshToken
+        {
+            Token = Convert.ToBase64String(randomNumber),
+            Expires = DateTime.UtcNow.AddHours(2),
+            Created = DateTime.UtcNow
+        };
+    }
+
+    private void SetRefreshTokenInCookie(string refreshToken, DateTime expires)
+    {
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            Expires = expires.ToLocalTime(),
+            Secure = true,
+            IsEssential = true,
+            SameSite = SameSiteMode.None
+        };
+
+        Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
     }
 }

@@ -14,7 +14,7 @@ namespace Loan_Management_System_API_Task.Controller;
 public class LoanController(IMediator mediator,IMessageProducer messageProducer) : ControllerBase
 {
     [HttpGet]
-    [AllowAnonymous]
+    [Authorize]
     [ProducesResponseType(typeof(ICollection<LoanDetailsDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetDetails()

@@ -357,6 +357,43 @@ namespace Loan_Management_System_API_Task.Migrations
 
                     b.Navigation("User");
                 });
+
+            modelBuilder.Entity("Loan_Management_System_API_Task.Models.User", b =>
+                {
+                    b.OwnsMany("Loan_Management_System_API_Task.Models.RefreshToken", "RefreshToken", b1 =>
+                        {
+                            b1.Property<int>("UserId")
+                                .HasColumnType("integer");
+
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<DateTime>("Created")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.Property<DateTime>("Expires")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.Property<DateTime?>("Revoked")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.Property<string>("Token")
+                                .IsRequired()
+                                .HasColumnType("text");
+
+                            b1.HasKey("UserId", "Id");
+
+                            b1.ToTable("RefreshToken");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UserId");
+                        });
+
+                    b.Navigation("RefreshToken");
+                });
 #pragma warning restore 612, 618
         }
     }

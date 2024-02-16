@@ -4,7 +4,7 @@ using Loan_Management_System_API_Task.Repository.Interface;
 
 namespace Loan_Management_System_API_Task.Repository.Implementation;
 
-public class UserRepository(DataContext context): IUserRepository
+public class UserRepository(DataContext context) : IUserRepository
 {
     public ICollection<User> GetAllUsers()
     {
@@ -19,6 +19,11 @@ public class UserRepository(DataContext context): IUserRepository
     public User UserAuthentication(string email, string password)
     {
         return context.Users.FirstOrDefault(u => u.Email == email && u.Password == password)!;
+    }
+
+    public User GetUserByRefreshToken(string refreshToken)
+    {
+        return context.Users.FirstOrDefault(u => u.RefreshToken!.Any(rt => rt.Token == refreshToken))!;
     }
 
     public bool AddUser(User user)
