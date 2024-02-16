@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -18,6 +19,8 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
 {
     [AllowAnonymous]
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult Login([FromBody] UserLoginDto userLoginDto)
     {
         if (!ModelState.IsValid)
@@ -48,6 +51,8 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
 
     [AllowAnonymous]
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult RefreshToken()
     {
         var token = Request.Cookies["refreshToken"];
@@ -70,6 +75,8 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
     }
 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult RevokeToken()
     {
         var token = Request.Cookies["refreshToken"];
@@ -87,7 +94,6 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
         userRepository.UpdateUser(user);
         return Ok("refresh token is revoked");
     }
-
 
     private string Generate(User user)
     {

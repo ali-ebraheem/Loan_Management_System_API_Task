@@ -10,7 +10,7 @@ namespace Loan_Management_System_API_Task.Controller;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public class LoanController(IMediator mediator,IMessageProducer messageProducer) : ControllerBase
+public class LoanController(IMediator mediator, IMessageProducer messageProducer) : ControllerBase
 {
     [HttpGet]
     [Authorize]
