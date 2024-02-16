@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loan_Management_System_API_Task", "Loan_Management_System_API_Task\Loan_Management_System_API_Task.csproj", "{DC221773-6129-4601-9A70-65DD8AAD7F3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2EB1DD5A-B3AF-4157-BA77-61F8582C36FD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution_Items", "Solution_Items", "{2EB1DD5A-B3AF-4157-BA77-61F8582C36FD}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
