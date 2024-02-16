@@ -2,6 +2,7 @@ using Loan_Management_System_API_Task.Commands;
 using Loan_Management_System_API_Task.Dto;
 using Loan_Management_System_API_Task.Models;
 using Loan_Management_System_API_Task.Queries;
+using Loan_Management_System_API_Task.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace Loan_Management_System_API_Task.Controller;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public class LoanController(IMediator mediator) : ControllerBase
+public class LoanController(IMediator mediator,IMessageProducer messageProducer) : ControllerBase
 {
     [HttpGet]
     [AllowAnonymous]
@@ -47,6 +48,7 @@ public class LoanController(IMediator mediator) : ControllerBase
         var results = mediator.Send(command);
         if (!ModelState.IsValid)
             return BadRequest();
+        messageProducer.SendMessage(loanApplicationDto);
 
         return Created();
     }
@@ -61,6 +63,7 @@ public class LoanController(IMediator mediator) : ControllerBase
         var results = mediator.Send(command);
         if (!ModelState.IsValid)
             return BadRequest();
+        messageProducer.SendMessage(loanRepaymentDto);
 
         return Ok();
     }

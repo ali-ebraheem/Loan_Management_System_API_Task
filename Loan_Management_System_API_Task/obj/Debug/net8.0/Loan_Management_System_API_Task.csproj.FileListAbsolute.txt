@@ -115,3 +115,4 @@
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/obj/Debug/net8.0/ref/Loan_Management_System_API_Task.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/MediatR.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/MediatR.Contracts.dll
+/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/RabbitMQ.Client.dll

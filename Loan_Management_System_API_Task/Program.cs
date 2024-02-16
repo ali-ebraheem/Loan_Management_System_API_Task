@@ -2,6 +2,7 @@ using System.Text;
 using Loan_Management_System_API_Task.Data;
 using Loan_Management_System_API_Task.Repository.Implementation;
 using Loan_Management_System_API_Task.Repository.Interface;
+using Loan_Management_System_API_Task.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -29,6 +30,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 );
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+builder.Services.AddScoped<IMessageProducer, MessageProducer>();
 builder.Services.AddScoped<ILoanApplicationRepository, LoanApplicationRepository>();
 builder.Services.AddScoped<ILoanDetailsRepository, LoanDetailsRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

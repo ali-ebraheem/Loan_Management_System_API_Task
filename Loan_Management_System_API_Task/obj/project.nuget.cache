@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JQIeVFEGmZ+Pow1ZZb+DPdLzUrC8PzEA8hCTshoxE5wRMlZXaqzrvJsGmenXQZoUfewvxyrzZEFDwpNNHEYiNQ==",
+  "dgSpecHash": "QqsY+JL0oewl126d9pBCTuO/Wb71SKFHeApofOgNuXh328BDdHmV7hOsW4jKa+5yD1lEDD5mUL0Pnvza9A2hYw==",
   "success": true,
   "projectFilePath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "/Users/aliibraheem/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/npgsql/8.0.0/npgsql.8.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.0/npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512",
+    "/Users/aliibraheem/.nuget/packages/rabbitmq.client/7.0.0-alpha.2/rabbitmq.client.7.0.0-alpha.2.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
@@ -56,13 +57,14 @@
     "/Users/aliibraheem/.nuget/packages/system.composition.runtime/6.0.0/system.composition.runtime.6.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.composition.typedparts/6.0.0/system.composition.typedparts.6.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.identitymodel.tokens.jwt/7.3.1/system.identitymodel.tokens.jwt.7.3.1.nupkg.sha512",
-    "/Users/aliibraheem/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
+    "/Users/aliibraheem/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
+    "/Users/aliibraheem/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.reflection.metadata/6.0.1/system.reflection.metadata.6.0.1.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/aliibraheem/.nuget/packages/system.text.json/8.0.0/system.text.json.8.0.0.nupkg.sha512",
-    "/Users/aliibraheem/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
+    "/Users/aliibraheem/.nuget/packages/system.threading.channels/8.0.0/system.threading.channels.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
