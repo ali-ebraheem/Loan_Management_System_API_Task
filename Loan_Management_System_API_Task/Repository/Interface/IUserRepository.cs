@@ -6,6 +6,7 @@ public interface IUserRepository
 {
     ICollection<User> GetAllUsers();
     User GetUserById(int id);
+    User UserAuthentication(string email, string password);
     bool AddUser(User user);
     bool UpdateUser(User user);
     bool DeleteUser(int id);

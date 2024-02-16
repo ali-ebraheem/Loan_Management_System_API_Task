@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Loan_Management_System_API_Task.Queries;
 
-public abstract class GetLoansDetailsQueries: IRequest<ICollection<LoanDetailsDto>>
+public class GetLoansDetailsQueries: IRequest<ICollection<LoanDetailsDto>>
 {
     
     

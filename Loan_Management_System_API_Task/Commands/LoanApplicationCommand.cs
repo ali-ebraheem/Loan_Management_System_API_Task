@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Loan_Management_System_API_Task.Commands;
 
-public abstract class LoanApplicationCommand(LoanApplicationDto loanApplicationDto) : IRequest<LoanApplication>
+public class LoanApplicationCommand(LoanApplicationDto loanApplicationDto) : IRequest<LoanApplication>
 {
     public LoanApplicationDto LoanApplicationDto { get; set; } = loanApplicationDto;
 }

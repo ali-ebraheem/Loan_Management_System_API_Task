@@ -16,6 +16,11 @@ public class UserRepository(DataContext context): IUserRepository
         return context.Users.FirstOrDefault(u => u.Id == id)!;
     }
 
+    public User UserAuthentication(string email, string password)
+    {
+        return context.Users.FirstOrDefault(u => u.Email == email && u.Password == password)!;
+    }
+
     public bool AddUser(User user)
     {
         context.Users.Add(user);

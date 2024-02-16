@@ -243,6 +243,10 @@ namespace Loan_Management_System_API_Task.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -263,6 +267,7 @@ namespace Loan_Management_System_API_Task.Migrations
                         new
                         {
                             Id = 1,
+                            Email = "admin@mail.com",
                             Name = "Admin",
                             Password = "Admin",
                             Role = "Admin"
@@ -270,6 +275,7 @@ namespace Loan_Management_System_API_Task.Migrations
                         new
                         {
                             Id = 2,
+                            Email = "user@mail.com",
                             Name = "User",
                             Password = "User",
                             Role = "User"
@@ -277,6 +283,7 @@ namespace Loan_Management_System_API_Task.Migrations
                         new
                         {
                             Id = 3,
+                            Email = "manager@mail.com",
                             Name = "Manager",
                             Password = "Manager",
                             Role = "Manager"

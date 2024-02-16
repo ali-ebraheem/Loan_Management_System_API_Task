@@ -24,6 +24,7 @@ public class LoanApplicationHandlers(
         var loanApplicationModel = mapper.Map<LoanApplication>(request.LoanApplicationDto);
         loanApplicationModel.User = user;
         loanApplicationModel.Status = LoanStatus.Pending;
+        loanApplicationModel.ApplicationDate=DateTime.Today;
         applicationRepository.AddLoanApplication(loanApplicationModel);
         return Task.FromResult(loanApplicationModel);
     }

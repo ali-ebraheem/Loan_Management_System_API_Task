@@ -6,7 +6,6 @@
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/Loan_Management_System_API_Task.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/Loan_Management_System_API_Task.pdb
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/AutoMapper.dll
-/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/Humanizer.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
@@ -114,3 +113,5 @@
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/obj/Debug/net8.0/Loan_Management_System_API_Task.pdb
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/obj/Debug/net8.0/Loan_Management_System_API_Task.genruntimeconfig.cache
 /Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/obj/Debug/net8.0/ref/Loan_Management_System_API_Task.dll
+/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/MediatR.dll
+/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/bin/Debug/net8.0/MediatR.Contracts.dll

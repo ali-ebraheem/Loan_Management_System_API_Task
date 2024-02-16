@@ -17,11 +17,11 @@ public class DataContext(DbContextOptions<DataContext> options):DbContext(option
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 1, Name = "Admin", Password = "Admin", Role = "Admin" });
+            .HasData(new User { Id = 1, Name = "Admin", Password = "Admin", Role = "Admin",Email = "admin@mail.com"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 2, Name = "User", Password = "User", Role = "User" });
+            .HasData(new User { Id = 2, Name = "User", Password = "User", Role = "User",Email = "user@mail.com"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 3, Name = "Manager", Password = "Manager", Role = "Manager" });
+            .HasData(new User { Id = 3, Name = "Manager", Password = "Manager", Role = "Manager" ,Email = "manager@mail.com"});
         modelBuilder.Entity<LoanApplication>()
             .HasData(new LoanApplication { Id = 1, UserId = 1, AmountRequested = 200000, ApplicationDate = new DateTime(2021, 01, 01),  Status = LoanStatus.Approved, Purpose = "Personal"});
         modelBuilder.Entity<LoanApplication>()
