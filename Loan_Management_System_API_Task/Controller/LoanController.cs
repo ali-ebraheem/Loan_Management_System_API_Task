@@ -33,7 +33,9 @@ public class LoanController(IMediator mediator, IMessageProducer messageProducer
     {
         var query = new GetLoanDetailsQueries(id);
         var results = mediator.Send(query);
-        return !ModelState.IsValid ? Task.FromResult<IActionResult>(BadRequest()) : Task.FromResult<IActionResult>(Ok(results));
+        return !ModelState.IsValid
+            ? Task.FromResult<IActionResult>(BadRequest())
+            : Task.FromResult<IActionResult>(Ok(results));
     }
 
     [HttpPost]

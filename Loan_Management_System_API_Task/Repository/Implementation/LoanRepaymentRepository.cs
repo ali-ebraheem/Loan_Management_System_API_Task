@@ -4,7 +4,7 @@ using Loan_Management_System_API_Task.Repository.Interface;
 
 namespace Loan_Management_System_API_Task.Repository.Implementation;
 
-public class LoanRepaymentRepository(DataContext context): ILoanRepaymentRepository
+public class LoanRepaymentRepository(DataContext context) : ILoanRepaymentRepository
 {
     public ICollection<LoanRepayment> GetAllLoanRepayments()
     {

@@ -24,7 +24,7 @@ public class LoanRepaymentHandlers(
         var loanRepayment = mapper.Map<LoanRepayment>(request.LoanRepaymentDto);
         loanRepayment.LoanApplication = loanApplication;
         loanRepayment.User = user;
-        loanRepayment.PaymentDate=new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        loanRepayment.PaymentDate = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
         loanRepaymentRepository.AddLoanRepayment(loanRepayment);
         return Task.FromResult(loanRepayment);
     }
