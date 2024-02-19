@@ -37,7 +37,7 @@ public class LoanController(IMediator mediator, IMessageProducer messageProducer
     }
 
     [HttpPost]
-    [AllowAnonymous]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public Task<IActionResult> CreateApplication([FromBody] LoanApplicationDto loanApplicationDto)
