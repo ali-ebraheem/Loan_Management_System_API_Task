@@ -16,13 +16,13 @@ public class LoanController(IMediator mediator, IMessageProducer messageProducer
     [Authorize]
     [ProducesResponseType(typeof(ICollection<LoanDetailsDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult GetDetails()
+    public Task<IActionResult> GetDetails()
     {
         var query = new GetLoansDetailsQueries();
         var results = mediator.Send(query);
-        if (!ModelState.IsValid)
-            return BadRequest();
-        return Ok(results);
+        return !ModelState.IsValid
+            ? Task.FromResult<IActionResult>(BadRequest())
+            : Task.FromResult<IActionResult>(Ok(results));
     }
 
     [HttpGet]
@@ -59,14 +59,14 @@ public class LoanController(IMediator mediator, IMessageProducer messageProducer
     [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult AddRepayment([FromBody] LoanRepaymentDto loanRepaymentDto)
+    public Task<IActionResult> AddRepayment([FromBody] LoanRepaymentDto loanRepaymentDto)
     {
         var command = new LoanRepaymentCommand(loanRepaymentDto);
         var results = mediator.Send(command);
         if (!ModelState.IsValid)
-            return BadRequest();
+            return Task.FromResult<IActionResult>(BadRequest());
         messageProducer.SendMessage(loanRepaymentDto);
 
-        return Ok();
+        return Task.FromResult<IActionResult>(Ok());
     }
 }
