@@ -29,29 +29,27 @@ public class LoanController(IMediator mediator, IMessageProducer messageProducer
     [Authorize]
     [ProducesResponseType(typeof(LoanDetailsDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult GetDetailsById([FromQuery] int id)
+    public Task<IActionResult> GetDetailsById([FromQuery] int id)
     {
         var query = new GetLoanDetailsQueries(id);
         var results = mediator.Send(query);
-        if (!ModelState.IsValid)
-            return BadRequest();
-        return Ok(results);
+        return !ModelState.IsValid ? Task.FromResult<IActionResult>(BadRequest()) : Task.FromResult<IActionResult>(Ok(results));
     }
 
     [HttpPost]
-    [Authorize]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult CreateApplication([FromBody] LoanApplicationDto loanApplicationDto)
+    public Task<IActionResult> CreateApplication([FromBody] LoanApplicationDto loanApplicationDto)
     {
         var command = new LoanApplicationCommand(loanApplicationDto);
 
         var results = mediator.Send(command);
         if (!ModelState.IsValid)
-            return BadRequest();
+            return Task.FromResult<IActionResult>(BadRequest());
         messageProducer.SendMessage(loanApplicationDto);
 
-        return Created();
+        return Task.FromResult<IActionResult>(Created());
     }
 
 
