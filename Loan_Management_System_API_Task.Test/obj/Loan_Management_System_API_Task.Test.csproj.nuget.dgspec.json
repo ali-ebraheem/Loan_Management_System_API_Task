@@ -1,0 +1,201 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task.Test/Loan_Management_System_API_Task.Test.csproj": {}
+  },
+  "projects": {
+    "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task.Test/Loan_Management_System_API_Task.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task.Test/Loan_Management_System_API_Task.Test.csproj",
+        "projectName": "Loan_Management_System_API_Task.Test",
+        "projectPath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task.Test/Loan_Management_System_API_Task.Test.csproj",
+        "packagesPath": "/Users/aliibraheem/.nuget/packages/",
+        "outputPath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/aliibraheem/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj": {
+                "projectPath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj",
+        "projectName": "Loan_Management_System_API_Task",
+        "projectPath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/Loan_Management_System_API_Task.csproj",
+        "packagesPath": "/Users/aliibraheem/.nuget/packages/",
+        "outputPath": "/Users/aliibraheem/RiderProjects/Loan_Management_System_API_Task/Loan_Management_System_API_Task/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/aliibraheem/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[7.0.0-alpha.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
