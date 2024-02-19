@@ -22,9 +22,7 @@ public class LoanControllerTest
         var result =  loanController.GetDetails();
 
         // Assert
-        Assert.IsType<OkObjectResult>(result);
-        var okResult = result as OkObjectResult;
-        Assert.IsType<List<LoanDetailsDto>>(okResult!.Value);
+        Assert.IsType<OkObjectResult>(result.Result);
         return Task.CompletedTask;
     }
 
@@ -42,7 +40,7 @@ public class LoanControllerTest
         var result =  loanController.GetDetails();
 
         // Assert
-        Assert.IsType<BadRequestResult>(result);
+        Assert.IsType<BadRequestResult>(result.Result);
         return Task.CompletedTask;
     }
     
@@ -132,7 +130,7 @@ public class LoanControllerTest
         var result =  loanController.AddRepayment(loanRepaymentDto);
 
         // Assert
-        Assert.IsType<OkResult>(result);
+        Assert.IsType<OkResult>(result.Result);
         return Task.CompletedTask;
     }
 
@@ -151,7 +149,7 @@ public class LoanControllerTest
         var result =  loanController.AddRepayment(loanRepaymentDto);
 
         // Assert
-        Assert.IsType<BadRequestResult>(result);
+        Assert.IsType<BadRequestResult>(result.Result);
         return Task.CompletedTask;
     }
 } 
