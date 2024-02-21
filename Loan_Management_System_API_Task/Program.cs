@@ -1,5 +1,6 @@
 using System.Text;
 using Loan_Management_System_API_Task.Data;
+using Loan_Management_System_API_Task.Middlewares;
 using Loan_Management_System_API_Task.Repository.Implementation;
 using Loan_Management_System_API_Task.Repository.Interface;
 using Loan_Management_System_API_Task.Services;
@@ -76,9 +77,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
+app.UseMiddleware<LoggingMiddleware>();
 app.MapControllers();
 
 app.Run();

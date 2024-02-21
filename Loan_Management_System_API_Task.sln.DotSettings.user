@@ -1,12 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=58012228_002Db1c6_002D49d0_002D8e71_002D771f414d4520/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetDetails_WithInvalidModelState_ReturnsBadRequestResult" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.GetDetails_WithInvalidModelState_ReturnsBadRequestResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.AddRepayment_WithInvalidModelState_ReturnsBadRequestResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.GetDetailsById_WithValidModelState_ReturnsOkResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.GetDetailsById_WithInvalidModelState_ReturnsBadRequestResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.CreateApplication_WithValidModelState_ReturnsCreatedResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.CreateApplication_WithInvalidModelState_ReturnsBadRequestResult&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::E0426E09-0DEE-4784-A7A5-3876BA0BA516::net8.0::Loan_Management_System_API_Task.Test.LoanControllerTest.AddRepayment_WithValidModelState_ReturnsOkResult&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;ProjectFile&gt;E0426E09-0DEE-4784-A7A5-3876BA0BA516/f:LoanControllerTest.cs&lt;/ProjectFile&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
