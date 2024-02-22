@@ -4,16 +4,16 @@ using RabbitMQ.Client;
 
 namespace Loan_Management_System_API_Task.Services;
 
-public class MessageProducer : IMessageProducer
+public class MessageProducer(IConfiguration configuration) : IMessageProducer
 {
     public void SendMessage<T>(T message)
     {
         var factory = new ConnectionFactory()
         {
-            HostName = "localhost",
-            UserName = "user",
-            Password = "password",
-            VirtualHost = "/",
+            HostName = configuration["RabbitMQ:HostName"],
+            UserName = configuration["RabbitMQ:UserName"],
+            Password = configuration["RabbitMQ:Password"],
+            VirtualHost = configuration["RabbitMQ:VirtualHost"],
         };
         using var connection = factory.CreateConnection();
         using var channel = connection.CreateChannel();

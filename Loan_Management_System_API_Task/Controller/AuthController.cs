@@ -23,7 +23,6 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult Login([FromBody] UserLoginDto userLoginDto)
     {
-        Console.WriteLine("Login");
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
