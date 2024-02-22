@@ -7,5 +7,5 @@ public class LoanRepaymentDto
     [Required] public int Id { get; set; }
     [Required] public int LoanApplicationId { get; set; }
     [Required] public int UserId { get; set; }
-    [Required] public decimal AmountPaid { get; set; }
+    [Required] [Range(100, 1000000)] public decimal AmountPaid { get; set; }
 }

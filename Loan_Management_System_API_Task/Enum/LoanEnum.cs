@@ -6,3 +6,8 @@ public enum LoanStatus
     Approved,
     Rejected
 }
+public enum LoanType
+{
+    Personal,
+    Business
+}
