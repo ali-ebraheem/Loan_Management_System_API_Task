@@ -10,9 +10,9 @@ public class MessageProducer(IConfiguration configuration) : IMessageProducer
     {
         var factory = new ConnectionFactory()
         {
-            HostName = configuration["RabbitMQ:HostName"],
-            UserName = configuration["RabbitMQ:UserName"],
-            Password = configuration["RabbitMQ:Password"],
+            HostName = configuration["RabbitMq:HostName"],
+            UserName = configuration["RabbitMq:UserName"],
+            Password = configuration["RabbitMq:Password"],
             VirtualHost = configuration["RabbitMQ:VirtualHost"],
         };
         using var connection = factory.CreateConnection();

@@ -8,7 +8,5 @@ public class LoanApplicationDto
     [Required] public int Id { get; set; }
     [Required] public int UserId { get; set; }
     [Required] public decimal AmountRequested { get; set; }
-
-    [AllowedValues(LoanType.Personal, LoanType.Business)]
     public string Purpose { get; set; }
 }

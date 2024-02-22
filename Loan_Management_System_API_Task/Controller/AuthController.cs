@@ -108,7 +108,7 @@ public class AuthController(IConfiguration configuration, IUserRepository userRe
         var token = new JwtSecurityToken(configuration["Jwt:Issuer"],
             configuration["Jwt:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(1),
+            expires: DateTime.Now.AddMinutes(5),
             signingCredentials: credentials
         );
         return new JwtSecurityTokenHandler().WriteToken(token);
